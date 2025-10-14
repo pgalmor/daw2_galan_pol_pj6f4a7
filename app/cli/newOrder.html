@@ -38,7 +38,7 @@
 <body>
     <div class="form-container">
         <h2 class="form-title">Galan Hardware Store</h2>
-        <form class="row g-3 needs-validation" novalidate>
+        <form id="formOrder" class="row g-3 needs-validation" novalidate>
             <div class="mb-3">
                 <label for="code" class="form-label">Order Code</label>
                 <input type="text" class="form-control" id="code" placeholder="Enter order code" required>
@@ -92,7 +92,7 @@
             </div>
 
             <div class="btn-group-custom">
-                <button type="submit" class="btn btn-primary" onclick="NewOrder()">Send Order</button>
+                <button type="button" class="btn btn-primary" onclick="NewOrder()">Send Order</button>
                 <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/menu.html">Go Back</a>
                 <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/index.html">Home</a>
             </div>
