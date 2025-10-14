@@ -12,6 +12,6 @@ function ViewOrders(){
 
 window.onload = function(){
     if(document.getElementById('orders') != null){
-        ViewOrders();
+        ViewOrders(); //LAPTOP-Q7TN42MH
     }
 }

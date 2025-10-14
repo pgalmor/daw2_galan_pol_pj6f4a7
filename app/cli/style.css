@@ -1,0 +1,9 @@
+.opcio {
+      margin-bottom: 10px;
+}
+
+.num {
+      display: none; /* ocult per defecte */
+      margin-left: 10px;
+      width: 60px;
+}
