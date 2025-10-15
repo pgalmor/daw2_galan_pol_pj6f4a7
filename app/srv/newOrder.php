@@ -18,6 +18,7 @@
     if($option2) $price += $value2*0.02;
     if($option3) $price += $value3*6.99;
     if($option4) $price += $value4*8.99;
+    $price = round($price,2);
 
     $newOrder = array(
         'code'=> $code,
@@ -43,15 +44,9 @@
         }
     }
 
-    // Afegim la nova comanda
     $orders[$code] = $newOrder;
-	
 	$serializedOrders = serialize($orders);
-
     $fp = file_put_contents($file, $serializedOrders, LOCK_EX);
-    //$fp = fopen($file, "wb");
-	//fwrite($fp, $serializedNewOrder);
-	//fclose($fp);
 
 	header('Content-Type: application/json');
 	echo json_encode(['price' => $price]);
