@@ -7,19 +7,36 @@
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <img src="">
-        <h3>Galan Hardware Store</h3>
-    </div>
-    <div class="container text-center">
-        <p>Primer de tot, una breu descripció de l'aplicació</p>
-        <p>Explicació de que fan i com s'utilitzen totes i cadascunes de les diferent funcionalitats del menú d'operacions de l'aplicació.</p>
-    </div>
-    <div class="container text-center">
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/index.html">Go Back</a>
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/menu.html">Menu</a>
+    <div class="form-container">
+        <div class="d-flex align-items-center justify-content-center mb-4">
+            <img src="images/logo.png" alt="Logo" class="me-3" style="width: 60px; height: 60px;">
+            <h2 class="form-title m-0">Description & Documentation</h2>
+        </div>
+        <div class="container text-center">
+            <p>
+                This is the internal website of Galan Hardware Store,
+                where employees can create new orders, check for specific
+                orders and view all the orders existing.<br>
+            </p>
+            <p>
+                In the menu you'll see three options: <strong>New Order, View Order and 
+                View All Orders.</strong><br>
+                In <strong>New Order</strong> you'll see a form to add a new order, adding all 
+                the information of the customer and the items and quantities of the purchase. 
+                Once the order is sent you'll get the price of the order with the IVA added.<br>
+                In <strong>View Order</strong> you'll have an text field where you can input a 
+                code and it will show you the order associated with that code. If there's no 
+                order with that code or there are no orders it will tell you so.<br>
+                In <strong>View All Orders</strong> you'll see a list of all existing orders.
+            </p>
+        </div>
+        <div class="btn-group-custom">
+            <a class="btn btn-custom" href="https://192.168.1.40/pj6/eCommerce/app/cli/index.html">Home</a>
+            <a class="btn btn-custom" href="https://192.168.1.40/pj6/eCommerce/app/cli/menu.html">Menu</a>
+        </div>
     </div>
 </body>
 </html>

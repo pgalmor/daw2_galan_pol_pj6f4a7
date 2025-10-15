@@ -7,19 +7,22 @@
     <link rel="icon" type="image/x-icon" href="images/logo.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <img src="">
-        <h3>Galan Hardware Store</h3>
-    </div>
-    <div class="container text-center">
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/newOrder.html">New Order</a>
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/viewOrder.html">View Order</a>
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/srv/getAllOrders.php">View All Orders</a>
-    </div>
-    <div class="container text-center">
-        <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/index.html">Go Back</a>
+    <div class="form-container">
+        <div class="d-flex align-items-center justify-content-center mb-4">
+            <img src="images/logo.png" alt="Logo" class="me-3" style="width: 60px; height: 60px;">
+            <h2 class="form-title m-0">Menu</h2>
+        </div>
+        <div class="btn-group-custom">
+            <a class="btn btn-custom" href="https://192.168.1.40/pj6/eCommerce/app/cli/newOrder.html">New Order</a>
+            <a class="btn btn-custom" href="https://192.168.1.40/pj6/eCommerce/app/cli/viewOrder.html">View Order</a>
+            <a class="btn btn-custom" href="https://192.168.1.40/pj6/eCommerce/app/srv/getAllOrders.php">View All Orders</a>
+        </div>
+        <div class="btn-group-custom" style="margin-top: 15px;">
+            <a class="btn btn-custom-dark" href="https://192.168.1.40/pj6/eCommerce/app/cli/index.html">Home</a>
+        </div>
     </div>
 </body>
 </html>

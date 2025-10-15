@@ -18,7 +18,7 @@
     if($option2) $price += $value2*0.02;
     if($option3) $price += $value3*6.99;
     if($option4) $price += $value4*8.99;
-    $price = round($price,2);
+    $price = round($price*1.21,2);
 
     $newOrder = array(
         'code'=> $code,
@@ -34,8 +34,6 @@
     );
 
     $file = __DIR__ . "/../../onlineOrders/onlineOrders.db";
-
-    $orders = [];
     if (file_exists($file)) {
         $content = file_get_contents($file);
         if ($content) {
