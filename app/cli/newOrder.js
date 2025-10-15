@@ -12,7 +12,8 @@ function NewOrder(){
     fetch(request, { method: 'POST', body: values }) //Aqui habria q calcular el preu total i ponerselo
     .then(response => response.json())
     .then(result => {
-        order.textContent =  "The total cost is " + result.price + "€";
+        if(result.price) order.textContent =  "The total cost is " + result.price + "€";
+        else order.textContent =  result.res;
     })
     .catch(errors => {				
         console.log(errors);		
