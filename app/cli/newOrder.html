@@ -7,33 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-    <style>
-        body {
-        background-color: #f8f9fa;
-        }
-        .form-container {
-        max-width: 700px;
-        margin: 50px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .form-title {
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: bold;
-        }
-        .form-check {
-        margin-bottom: 10px;
-        }
-        .btn-group-custom {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 25px;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <div class="form-container">
@@ -41,54 +15,54 @@
         <form id="formOrder" class="row g-3 needs-validation" novalidate>
             <div class="mb-3">
                 <label for="code" class="form-label">Order Code</label>
-                <input type="text" class="form-control" id="code" placeholder="Enter order code" required>
+                <input type="text" class="form-control" id="code" name="code" placeholder="Enter order code" required>
             </div>
 
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter full name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required>
             </div>
 
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Enter address" required>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
             </div>
 
             <hr>
 
             <h5 class="mt-4">Select Products</h5>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="screw" id="opcio1" onchange="mostraValor(1)">
-                <label class="form-check-label" for="opcio1">Screw</label>
-                <input type="number" id="valor1" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
+                <input class="form-check-input" type="checkbox" value="screw" id="option1" name="option1" onchange="mostraValor(1)">
+                <label class="form-check-label" for="option1">Screw - 0.05€</label>
+                <input type="number" id="value1" name="value1" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="nail" id="opcio2" onchange="mostraValor(2)">
-                <label class="form-check-label" for="opcio2">Nail</label>
-                <input type="number" id="valor2" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
+                <input class="form-check-input" type="checkbox" value="nail" id="option2" name="option2" onchange="mostraValor(2)">
+                <label class="form-check-label" for="option2">Nail - 0.02€</label>
+                <input type="number" id="value2" name="value2" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="screwdriver" id="opcio3" onchange="mostraValor(3)">
-                <label class="form-check-label" for="opcio3">Screwdriver</label>
-                <input type="number" id="valor3" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
+                <input class="form-check-input" type="checkbox" value="screwdriver" id="option3" name="option3" onchange="mostraValor(3)">
+                <label class="form-check-label" for="option3">Screwdriver - 6.99€</label>
+                <input type="number" id="value3" name="value3" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="hammer" id="opcio4" onchange="mostraValor(4)">
-                <label class="form-check-label" for="opcio4">Hammer</label>
-                <input type="number" id="valor4" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
+                <input class="form-check-input" type="checkbox" value="hammer" id="option4" name="option4" onchange="mostraValor(4)">
+                <label class="form-check-label" for="option4">Hammer - 8.99€</label>
+                <input type="number" id="value4" name="value4" class="form-control d-none ms-3" min="0" value="0" style="width: 100px;" placeholder="Qty">
             </div>
 
             <div class="btn-group-custom">
@@ -97,11 +71,12 @@
                 <a class="btn btn-primary" href="https://localhost/pj6/eCommerce/app/cli/index.html">Home</a>
             </div>
         </form>
+        <p id="result" class="form-result"></p>
     </div>
     <script>
         function mostraValor(num) { 
-            const opcioSeleccionada = document.getElementById(`opcio${num}`);
-            const valorOpcioSeleccionada = document.getElementById(`valor${num}`);
+            const opcioSeleccionada = document.getElementById(`option${num}`);
+            const valorOpcioSeleccionada = document.getElementById(`value${num}`);
             if(opcioSeleccionada.checked){
                 valorOpcioSeleccionada.classList.remove('d-none');
                 valorOpcioSeleccionada.classList.add('d-inline-block');

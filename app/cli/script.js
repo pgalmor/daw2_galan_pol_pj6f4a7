@@ -1,48 +1,42 @@
 function NewOrder(){
     console.log('order sent');
 
-    const valors = new FormData(document.getElementById("FormCalc")); //Obtenció dels valors del formulari dins de la variable valors
-    const result = document.getElementById("result");
-                    
-    // Construcció de la petició
-    const ip = "localhost"; //adreça IP del servidor
-    const carpeta = "pj6/sm6ex5"; // carpeta a on es troba el fitxer PHP
-    const fitxerPHP = "sm6ex5.php"; // nom del fitxer PHP
-    const peticio = "http://" + ip + "/" + carpeta + "/" + fitxerPHP;
-    //const peticio = fitxerPHP;
+    const values = new FormData(document.getElementById("formOrder"));
+    const order = document.getElementById("result");
+
     
-    // Enviat la petició, esperant la resposat i recollint la resposta sense haver de recarregar la página 
-    fetch(peticio,{
-            method: 'POST',
-            body: valors
-    }) // Envia la petició utilitzant el mètode POST.
-    .then(resposta => resposta.json()) // Es recull la resposta en format JSON
-    .then(resultat => { //Quan s'ha recollit tota la resposta enviada, es desen dins 'resultat' i s'executa el que hi ha dins els claudators
-        result.textContent =  "El resultat és " + resultat.suma; //suma té el mateix nom que el nom de clau que es posa a la línia 11 de sm6ex5.php						
+    
+    const ip = "localhost";
+    const path = "pj6/eCommerce/app/srv";
+    const file = "newOrder.php";
+    const request = "https://" + ip + "/" + path + "/" + file;
+    
+    fetch(request, { method: 'POST', body: values }) //Aqui habria q calcular el preu total i ponerselo
+    .then(response => response.json())
+    .then(result => {
+        order.textContent =  "The total cost is " + result.price + "€";
     })
-    .catch(errors => { //Gestió d'errors						
-        result.textContent = "Error calculant la suma";
+    .catch(errors => {						
+        order.textContent = "Error sending the order";
     });
 }
 
 function ViewOrder(code){
+    console.log('button');
     const order = document.getElementById('order');
-    // Construcció de la petició
-    const ip = "localhost"; //adreça IP del servidor
-    const path = "pj6/eCommerce/app/srv"; // carpeta a on es troba el fitxer PHP
-    const filePHP = "getOrder.php"; // nom del fitxer PHP
-    const request = "https://" + ip + "/" + path + "/" + filePHP + "?code=" + encodeURIComponent(code);
-    //const peticio = fitxerPHP;
+
+    const ip = "localhost";
+    const path = "pj6/eCommerce/app/srv";
+    const file = "getOrder.php";
+    const request = "https://" + ip + "/" + path + "/" + file + "?code=" + encodeURIComponent(code);
     
-    // Enviat la petició, esperant la resposat i recollint la resposta sense haver de recarregar la página 
-    fetch(request,{
-        method: 'GET',
-    }) // Envia la petició utilitzant el mètode GET.
-    .then(response => response.json()) // Es recull la resposta en format JSON
-    .then(result => { //Quan s'ha recollit tota la resposta enviada, es desen dins 'resultat' i s'executa el que hi ha dins els claudators
-        order.innerHTML =  result.order; //suma té el mateix nom que el nom de clau que es posa a la línia 11 de sm6ex5.php						
+    fetch(request, { method: 'GET' })
+    .then(response => response.json())
+    .then(result => {
+        order.innerHTML =  `<strong>Order Code: ${result.order['code']} -></strong> Full Name: ${result.order['name']} - Address: ${result.order['address']} - Email: ${result.order['email']} - Phone: ${result.order['phone']} <br>
+        <strong>Order -></strong> Screws: ${result.order['screw']} uds, Nails: ${result.order['nail']} uds, Screwdrivers: ${result.order['screwdriver']} uds, Hammers: ${result.order['hammer']} uds -> <strong>Price: ${result.order['price']} € </strong><br><br>`;
     })
-    .catch(errors => { //Gestió d'errors						
+    .catch(errors => {					
         order.innerHTML = "Error getting the order";
     });
 }

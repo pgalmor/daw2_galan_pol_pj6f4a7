@@ -1,9 +1,33 @@
-.opcio {
+body {
+      background-color: #f8f9fa;
+}
+.form-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: bold;
+}
+.form-result {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 110%;
+}
+.form-check {
       margin-bottom: 10px;
 }
-
-.num {
-      display: none; /* ocult per defecte */
-      margin-left: 10px;
-      width: 60px;
+.btn-group-custom {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+}
+.orders {
+      font-size: 10%;
 }
