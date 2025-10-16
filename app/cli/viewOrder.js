@@ -1,7 +1,7 @@
 function ViewOrder(code){
     const order = document.getElementById('order');
 
-    const ip = "192.168.1.40";
+    const ip = "laptop-q7tn42mh";
     const path = "pj6/eCommerce/app/srv";
     const file = "getOrder.php";
     const request = "https://" + ip + "/" + path + "/" + file + "?code=" + encodeURIComponent(code);

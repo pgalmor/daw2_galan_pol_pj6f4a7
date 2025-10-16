@@ -4,7 +4,7 @@ function NewOrder(){
     const values = new FormData(document.getElementById("formOrder"));
     const order = document.getElementById("result");
 
-    const ip = "192.168.1.40";
+    const ip = "laptop-q7tn42mh";
     const path = "pj6/eCommerce/app/srv";
     const file = "newOrder.php";
     const request = "https://" + ip + "/" + path + "/" + file;
