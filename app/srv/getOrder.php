@@ -2,7 +2,7 @@
     include("getOrdersFromFile.php");
     
 	$code = (string)$_GET["code"];
-    $orders = GetOrdersFromFile("/../../onlineOrders/onlineOrders.db");
+    $orders = GetOrdersFromFile("/../../onlineOrders", "onlineOrders.db");
     if($orders){
         if(array_key_exists($code, $orders)) {
             $orderResult = $orders[$code];

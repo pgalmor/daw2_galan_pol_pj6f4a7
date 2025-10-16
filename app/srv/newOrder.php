@@ -1,4 +1,7 @@
 <?php
+    if (!is_dir(__DIR__ . "/../../onlineOrders")) {
+        mkdir(__DIR__ . "/../../onlineOrders");
+    }
     $file = __DIR__ . "/../../onlineOrders/onlineOrders.db";
     if (file_exists($file)) {
         $content = file_get_contents($file);

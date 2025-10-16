@@ -18,7 +18,7 @@
             <?php
                 include("getOrdersFromFile.php");
 
-                $orders = GetOrdersFromFile("/../../onlineOrders/onlineOrders.db");
+                $orders = GetOrdersFromFile("/../../onlineOrders", "onlineOrders.db");
                 if($orders){
                     foreach ($orders as $code => $order) {
                         $name = $order['name'];
